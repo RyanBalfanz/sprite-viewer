@@ -2,11 +2,29 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>Sprite Viewer</title>
 	</head>
 	<body>
+		<form id="configuration">
+			<div>
+				<label for="frameCount">Frame count</label>
+				<input id="frameCount" type="number" name="frameCount" min="0" step="1" value="40" disabled>
+			</div>
+			<div>
+				<label for="frameWidth">Frame width</label>
+				<input id="frameWidth" type="number" name="frameWidth" min="0" step="1" value="208" disabled>
+			</div>
+			<div>
+				<label for="frameHeight">Frame height</label>
+				<input id="frameHeight" type="number" name="frameHeight" min="0" step="1" value="432" disabled>
+			</div>
+			<div>
+				<label for="omega">Rotations per second</label>
+				<input id="omega" type="number" name="omega" min="0.0" max="5.0" step="0.1" value="1.0">
+			</div>
+		</form>
 		<canvas id="viewer" width="208px" height="432px"></canvas>
-		<div style="display:block;">
+		<div style="display:none;">
 			<img id="viewer-img-source" src="sprites/10021396586243-sprite.jpg" width="300" height="227">
 		</div>
 		<script src="app.js"></script>
