@@ -3,29 +3,39 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Sprite Viewer</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	</head>
 	<body>
-		<form id="configuration">
-			<div>
-				<label for="frameCount">Frame count</label>
-				<input id="frameCount" type="number" name="frameCount" min="0" step="1" value="40" disabled>
+		<div class="container">
+			<form id="configuration" class="form-inline">
+				<div class="form-group">
+					<label for="frameCount">Frame count</label>
+					<input id="frameCount" class="form-control" type="number" name="frameCount" min="0" step="1" value="40" disabled>
+				</div>
+				<div class="form-group">
+					<label for="frameWidth">Frame width</label>
+					<input id="frameWidth" class="form-control" type="number" name="frameWidth" min="0" step="1" value="208" disabled>
+				</div>
+				<div class="form-group">
+					<label for="frameHeight">Frame height</label>
+					<input id="frameHeight" class="form-control" type="number" name="frameHeight" min="0" step="1" value="432" disabled>
+				</div>
+				<div class="form-group">
+					<label for="omega">Rotations per second</label>
+					<input id="omega" class="form-control" type="number" name="omega" min="0.0" max="5.0" step="0.1" value="1.0" autofocus>
+				</div>
+			</form>
+			<canvas id="viewer" width="208px" height="432px"></canvas>
+			<div style="display:none;">
+				<img id="viewer-img-source" src="sprites/10021396586243-sprite.jpg" width="300" height="227">
 			</div>
-			<div>
-				<label for="frameWidth">Frame width</label>
-				<input id="frameWidth" type="number" name="frameWidth" min="0" step="1" value="208" disabled>
-			</div>
-			<div>
-				<label for="frameHeight">Frame height</label>
-				<input id="frameHeight" type="number" name="frameHeight" min="0" step="1" value="432" disabled>
-			</div>
-			<div>
-				<label for="omega">Rotations per second</label>
-				<input id="omega" type="number" name="omega" min="0.0" max="5.0" step="0.1" value="1.0">
-			</div>
-		</form>
-		<canvas id="viewer" width="208px" height="432px"></canvas>
-		<div style="display:none;">
-			<img id="viewer-img-source" src="sprites/10021396586243-sprite.jpg" width="300" height="227">
 		</div>
 		<script src="app.js"></script>
 	</body>
